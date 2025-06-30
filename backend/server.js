@@ -40,7 +40,6 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', ordersRoutes);
 app.use('/api/checkout',  require('./routes/checkout'));
 app.use('/api/users', require('./routes/users.routes'));
-// app.use('/api/stripe/create-checkout-session', require('./routes/checkout'));
 app.use('/api/webhook', webhookRoutes);
 
 
@@ -50,8 +49,3 @@ app.get('/', (req, res) => {
   res.send('API is running..');
 });
 
-// Start Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
-});
