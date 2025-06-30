@@ -4,7 +4,7 @@ dist/
 .env
 *.log
 uploads/
-schema.md
+stripe_1.27.0_windows_x86_64(1)/
 
 # Angular
 frontend/.angular/cache/
