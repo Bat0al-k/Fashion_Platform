@@ -15,7 +15,7 @@ router.post('/google-login', authController.loginWithGoogle);
 
 // GET /api/user/profile
 
-console.log('getProfile:', authController.getProfile);
+// console.log('getProfile:', authController.getProfile);
 router.get('/profile', auth, authController.getProfile)
 
 // PUT /api/user/profile

@@ -59,7 +59,7 @@
 // module.exports = router;
 
 
-console.log('🔐 Stripe Key from .env:', process.env.STRIPE_SECRET_KEY);
+// console.log('🔐 Stripe Key from .env:', process.env.STRIPE_SECRET_KEY);
 
 const express = require('express');
 const router = express.Router();
