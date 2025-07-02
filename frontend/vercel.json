@@ -6,7 +6,6 @@
       "use": "@vercel/angular"
     }
   ],
-  
   "rewrites": [
     {
       "source": "/(.*)",
