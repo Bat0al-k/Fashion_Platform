@@ -68,6 +68,12 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  goToPayment() {
+    // window.open('https://checkout.stripe.com/c/pay/cs_test_a1opx8CShbAWnY9nekWDCqVq0TSrn41fC1ZRr51JgVIzIhIBLA2eAGzCP3#fidkdWxOYHwnPyd1blpxYHZxWjA0V2BgbFdGZjZiT3JwPG9wSGpRdXBESTFvT3V3VENubWtMbXM3NEt8UG1ubHNdT0x1SzxSd0BCYFNjfG82djRUTXxSNDFAVDVpMUF9PXU3MWhibVVjdUdnNTVHNl9hTjJuSScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl', '_blank');
+    // Open Stripe checkout in a new tab
+    window.location.replace( 'https://checkout.stripe.com/c/pay/cs_test_a1opx8CShbAWnY9nekWDCqVq0TSrn41fC1ZRr51JgVIzIhIBLA2eAGzCP3#fidkdWxOYHwnPyd1blpxYHZxWjA0V2BgbFdGZjZiT3JwPG9wSGpRdXBESTFvT3V3VENubWtMbXM3NEt8UG1ubHNdT0x1SzxSd0BCYFNjfG82djRUTXxSNDFAVDVpMUF9PXU3MWhibVVjdUdnNTVHNl9hTjJuSScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl');
+  }
+
   goToOrders() {
     this.router.navigate(['/orders']);
   }
