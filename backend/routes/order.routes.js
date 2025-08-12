@@ -16,7 +16,8 @@ router.get("/",verifyToken,async (req, res) => {
   try {
     const userId = req.user.id; 
     const orders = await Order.find({ user: userId});
-    console.log("Fetched Orders:", orders);
+    // ///////////////////////////////////////////////  FOR TESTING ///////////////////////////////////////////////
+    // console.log("Fetched Orders:", orders);
     res.json(orders);
   } catch (error) {
     console.error("Error fetching orders:", error);
