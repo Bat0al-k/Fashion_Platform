@@ -11,7 +11,12 @@ module.exports = [
     express.json(),
     express.urlencoded(),
     cookieParser(),
-    cors(),
+    cors(
+        {
+        origin: "https://fashion-platform-so1s.vercel.app/",
+        credentials: true
+        }
+    ),
     morgan('dev'),
 ]
 
