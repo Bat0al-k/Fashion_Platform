@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://fashion-platform-khaki.vercel.app/', // our server in production time 
+    apiUrl: 'https://fashion-platform-khaki.vercel.app/', // our server in production time
     STRIPE_PUBLIC_KEY:"pk_test_51ReeiRCc3gJwu9juMoTpuAL4jJprQFkhnIhv21NyUhkivXJIpN9WrEGeVfyj3s1QHyW14EQ0l4Dx8p24mghPfpBb00B3ZdK7kL"
     ,firebaseConfig: {
         apiKey: "AIzaSyDl4cTC6-LXjyXXSt1__jAeX6EQOpIHIzs",

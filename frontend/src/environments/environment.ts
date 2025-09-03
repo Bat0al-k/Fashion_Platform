@@ -1,6 +1,7 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:3000/api/', // backend server in development time, i guess
+    apiUrl: 'https://fashion-platform-khaki.vercel.app/', // backend server in production
+    // apiUrl: 'http://localhost:3000/', // backend server in development time
     // STRIPE_PUBLIC_KEY: 'pk_test_51RYWcQH6GDcoqFCbB8kdg9gOinlivCMIQ33MA7EVk1n7UmWtF5lAjvYK8goxiB9mktucvkfK0dUCgcWIotp6mYAc00dDa1S6F7',
     STRIPE_PUBLIC_KEY:"pk_test_51ReeiRCc3gJwu9juMoTpuAL4jJprQFkhnIhv21NyUhkivXJIpN9WrEGeVfyj3s1QHyW14EQ0l4Dx8p24mghPfpBb00B3ZdK7kL"
     ,firebaseConfig: {
@@ -14,7 +15,7 @@ export const environment = {
     }
 };
 
-// http://localhost:3000/api/users/login 
+// http://localhost:3000/api/users/login
 
 
 

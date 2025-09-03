@@ -142,8 +142,8 @@ async checkout() {
 }));
   const token = sessionStorage.getItem('token');
 
-  this.http.post<any>(
-    'http://localhost:3000/api/checkout/create-checkout-session',
+    this.http.post<any>(
+             `${environment.apiUrl}api/checkout/create-checkout-session`,
     { products },
     {
       headers: {

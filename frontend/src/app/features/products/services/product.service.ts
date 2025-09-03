@@ -3,13 +3,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 import { Product } from '../models/product.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:3000/api/products';  
+  private baseUrl = `${environment.apiUrl}api/products`;
 
   constructor(private http: HttpClient) {}
 
@@ -50,7 +51,7 @@ export class ProductService {
       if (filters.limit !== undefined)
         params = params.append('limit', filters.limit.toString());
 
-      
+
        if (filters.sortBy)
       params = params.append('sortBy', filters.sortBy);
   }

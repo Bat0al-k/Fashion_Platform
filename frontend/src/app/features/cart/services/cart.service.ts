@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
+import { environment } from '../../../../environments/environment';
 
 export interface CartItem {
   _id: string;
@@ -12,8 +13,8 @@ export interface CartItem {
   image: string;
   color?: string;
   size?: string;
-   brand?: string;
-   code?: string;
+    brand?: string;
+    code?: string;
 
 
 }
@@ -29,7 +30,7 @@ export interface CartResponse {
 }
 
 
-const API_URL = 'http://localhost:3000/api/cart';
+const API_URL = `${environment.apiUrl}api/cart`;
 const TEST_MODE = false;
 
 @Injectable({
