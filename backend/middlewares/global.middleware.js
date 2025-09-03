@@ -1,22 +1,31 @@
 const express = require('express');
-// require {'dotenv'}.config();   // eng ali typing way..
 const dotenv = require('dotenv');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
+
 dotenv.config();
 
-module.exports = [
-    express.json(),
-    express.urlencoded(),
-    cookieParser(),
-    cors(
-        {
-        origin: "http://localhost:4200", "https://fashion-platform-so1s.vercel.app/",  
-        credentials: true
-        }
-    ),
-    morgan('dev'),
-]
+const allowedOrigins = [
+  "http://localhost:4200",
+  "https://fashion-platform-so1s.vercel.app"
+];
 
+module.exports = [
+  express.json(),
+  express.urlencoded({ extended: true }),
+  cookieParser(),
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  }),
+  morgan('dev'),
+];
