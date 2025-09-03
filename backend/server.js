@@ -28,12 +28,12 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(express.json());
 
 
 // Use global middlewares
 globalMiddleware.forEach(middleware => app.use(middleware));
+app.options('*', cors());
 
 // Routes
 app.use('/api/products', productRoutes);
