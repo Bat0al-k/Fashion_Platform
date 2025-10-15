@@ -42,6 +42,9 @@ app.use('/api/checkout',  require('./routes/checkout'));
 app.use('/api/users', require('./routes/users.routes'));
 app.use('/api/webhook', webhookRoutes);
 
+// Additional routes without /api prefix for backward compatibility
+app.use('/users', require('./routes/users.routes'));
+
 
 
 // Test Route
@@ -49,4 +52,8 @@ app.get('/', (req, res) => {
   res.send('API is running..');
 });
 
-export default app;
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

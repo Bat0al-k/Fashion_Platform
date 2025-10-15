@@ -1,5 +1,4 @@
 const express = require('express');
-// require {'dotenv'}.config();   // eng ali typing way..
 const dotenv = require('dotenv');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
@@ -13,7 +12,7 @@ module.exports = [
     cookieParser(),
     cors(
         {
-        origin: "http://localhost:4200", "https://fashion-platform-so1s.vercel.app/",  
+        origin: ["http://localhost:4200", "https://fashion-platform-so1s.vercel.app"],  
         credentials: true
         }
     ),

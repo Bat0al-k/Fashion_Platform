@@ -161,7 +161,7 @@ const verifyEmail = async (req, res) => {
         const decodedToken = await admin.auth().verifyIdToken(idToken);
         const { uid, email, name } = decodedToken;
         
-        const user = await User.findOne({ email });
+        let user = await User.findOne({ email });
         if (!user) {
             
             user = await User.create({
