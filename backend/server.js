@@ -28,7 +28,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-app.use(cors({ origin: ['http://localhost:4200','https://fashion-three-nu.vercel.app/'] }));
 app.use(express.json());
 
 
