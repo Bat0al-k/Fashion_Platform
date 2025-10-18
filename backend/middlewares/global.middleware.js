@@ -8,26 +8,23 @@ dotenv.config();
 
 const allowedOrigins = [
     'http://localhost:4200',
-    'https://fashion-three-nu.vercel.app/',
+    'https://fashion-three-nu.vercel.app',
 ];
 
 module.exports = [
+    cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            console.log('❌ Blocked by CORS:', origin);
+            callback(new Error('Not allowed by CORS'));
+        }
+        },
+        credentials: true,
+    }),
     express.json(),
     express.urlencoded(),
     cookieParser(),
-    cors(
-        {
-        origin: function (origin, callback) {
-            // allow requests with no origin 
-            if (!origin) return callback(null, true);
-            if (allowedOrigins.indexOf(origin) === -1) {
-                const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-                return callback(new Error(msg), false);
-            }
-            return callback(null, true);
-            },
-        credentials: true
-        }
-    ),
     morgan('dev'),
 ]
