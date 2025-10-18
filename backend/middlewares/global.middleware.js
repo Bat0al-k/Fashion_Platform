@@ -12,7 +12,7 @@ module.exports = [
     cookieParser(),
     cors(
         {
-        origin: ["http://localhost:4200", "https://fashion-platform-so1s.vercel.app"],  
+        origin: ["http://localhost:4200", "https://fashion-three-nu.vercel.app/"],    
         credentials: true
         }
     ),
