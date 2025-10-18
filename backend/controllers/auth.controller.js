@@ -79,25 +79,6 @@ const logIn = async (req,res) => {
     }
 }
 
-    // // verification email
-    // const verifyEmail = async (req, res) => {
-    //     const token = req.query.token;
-
-    //     try {
-    //         const decoded = jwt.verify(token, process.env.JWT_EMAIL_SECRET);
-    //         const user = await User.findById(decoded.id);
-    //         if (!user) return res.status(404).json({ message: 'User not found' });
-
-    //         user.isVerified = true;
-    //         await user.save();
-
-    //         // res.status(200).json({ message: 'Email verified successfully' });
-    //         res.status(200).json({ message: 'Email verified successfully' });
-    //     } catch (err) {
-    //         res.status(400).json({ message: 'Invalid or expired token' });
-    //     }
-    // };
-
     // verification email
 const verifyEmail = async (req, res) => {
     const token = req.query.token;
