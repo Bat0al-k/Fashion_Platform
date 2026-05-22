@@ -113,4 +113,4 @@ cartSchema.methods.clear = function() {
   return this.save();
 };
 
-module.exports = mongoose.model('Cart', cartSchema);
+module.exports = mongoose.model('carts', cartSchema);
