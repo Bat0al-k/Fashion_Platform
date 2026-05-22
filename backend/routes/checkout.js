@@ -61,6 +61,7 @@
 
 // console.log('🔐 Stripe Key from .env:', process.env.STRIPE_SECRET_KEY);
 
+
 const express = require('express');
 const router = express.Router();
 const Stripe = require('stripe');
@@ -110,8 +111,8 @@ const session = await stripe.checkout.sessions.create({
     userId: req.user.id,
   products: JSON.stringify(enrichedProducts), 
   },
-  success_url: 'http://localhost:4200/checkout/success',
-  cancel_url: 'https://yourdomain.com/cancel',
+  success_url: 'https://fashion-three-nu.vercel.app/checkout/success',
+  cancel_url: 'https://fashion-three-nu.vercel.app/cancel',
 });
 
 
