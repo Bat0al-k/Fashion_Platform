@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 
 const sendEmail = async ({ to, subject, html }) => {
     // Looking to send emails in production? Check out our Email API/SMTP product!
+    
     try {
         const transporter = nodemailer.createTransport({
             //  service: 'gmail', 
@@ -14,7 +15,8 @@ const sendEmail = async ({ to, subject, html }) => {
                 pass: process.env.EMAIL_PASS,
             },
         });
-
+        await transporter.verify();
+        console.log("SMTP Connected Successfully");
         const info = await transporter.sendMail({
             from: `"E-Commerce Team" <${process.env.EMAIL_USER}>`,
             to,
